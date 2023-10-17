@@ -26,3 +26,29 @@
   color: deeppink;
   font-size: 20px;
 }
+.hidden-block {
+  /* display: none; */
+  width: 400xp;
+  height: 200px;
+  background-color: royalblue;
+  opacity: 0;
+  transition: 1s;
+  transform: rotate(0);
+}
+#check:checked ~ .hidden-block {
+  opacity: 100%;
+  transform: rotate(50000000000000000000000000000000000000000000deg);
+  /* display: block; */
+}
+.label-hidden {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gold;
+  border: 1px solid rgb(255, 247, 0);
+  cursor: pointer;
+}
+#check {
+  display: none;
+}
