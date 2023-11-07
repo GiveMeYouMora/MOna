@@ -2,6 +2,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .header {
   width: 100%;
   height: 100px;
@@ -14,74 +15,100 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .classHeder {
   height: 100%;
 }
+
 .Header-nav {
   display: flex;
   gap: 20px;
 }
+
 .Header-nav a {
   text-decoration: none;
   color: deeppink;
   font-size: 20px;
 }
-.hidden-block { 
+
+.hidden-block {
   width: 400px;
   height: 200px;
- 
+
   background-color: royalblue;
   opacity: 0;
   transition: 1s;
   transform: scale(0) rotate(0);
-  position: fixed; 
+  position: fixed;
   right: -40px;
-    top: -140px;
+  top: -140px;
 }
-#check:checked ~ .hidden-block {
+
+#check:checked~.hidden-block {
   opacity: 100%;
   transform: rotate(360deg);
   /* display: block; */
-  top: 140px; 
+  top: 140px;
 }
+
 .label-hidden {
-  display: block;
+  display: flex;
   width: 21px;
-  height: 5px;
+  height: 20px;
   right: 20px;
   top: 100px;
   background-color: gold;
   border: 1px solid rgb(255, 247, 0);
   cursor: pointer;
-  position: fixed ;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
 }
+
+.label-hidden span {
+  display: block;
+  width: 21px;
+  height: 5px;
+  background-color: rgb(0, 255, 106);
+  border: 1px solid rgb(255, 247, 0);
+  cursor: pointer;
+
+}
+
 #check {
   display: none;
 }
-.label-hidden::after {
+
+.label-hidden span::after {
   content: "";
-  display: block;
-  width: 20px;
+  display: flex;
+  width: 17px;
   height: 5px;
-  background-color:darkolivegreen;
+  background-color: darkolivegreen;
   position: absolute;
-  top: -8px;
+  top: 1px;
 }
-.label-hidden::before{
+
+.label-hidden span::before {
   content: "";
   display: block;
-  width: 20px;
+  width: 17px;
   height: 5px;
   background-color: orangered;
   position: absolute;
-  top: 8px;
+  top: 12px;
 }
-#check:checked ~ .label-hidden::after {
-  transform: rotate(45deg);
+
+#check:checked~.label-hidden span::after {
+  transform: rotate(90deg);
   top: 0;
 }
-#check:checked~.label-hidden::before {
+
+#check:checked~.label-hidden span::before {
+  transform: none;
+  top: 0;
+}
+
+#check:checked~.label-hidden span {
   transform: rotate(-45deg);
-  top: 0;
-  
 }
